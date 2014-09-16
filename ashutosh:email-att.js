@@ -163,7 +163,10 @@ EmailAtt.send = function (options) {
     mc.addHeader(name, value);
   });
 
-  mc.addAttachment({fileName:"invite.ics", contents:"test data in here"});
+  // attachmentOptions is an array of options that conform to mailcomposer's needs:
+  _.each(options.attachmentOptions, function(attachmentOptions) {
+      mc.addAttachment(attachmentOptions);
+  });
 
   var pool = getPool();
   if (pool) {
