@@ -6,11 +6,11 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@0.9.2.1');
-  api.addFiles('priyadarshy:email-att.js');
+  api.addFiles('ashutosh:email-att.js');
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('priyadarshy:email-att');
-  api.addFiles('priyadarshy:email-att-tests.js');
+  api.use('ashutosh:email-att');
+  api.addFiles('ashutosh:email-att-tests.js');
 });
