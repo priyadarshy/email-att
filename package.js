@@ -1,7 +1,13 @@
 Package.describe({
     summary: "Send e-mails with attachments.",
-    version: "1.0.8",
+    version: "1.0.9",
     git: "www.github.com/priyadarshy/email-att"
+});
+
+Npm.depends({
+    "simplesmtp": "0.3.10",
+    "stream-buffers": "0.2.5",
+    "mailcomposer": "0.1.15"
 });
 
 Package.on_use(function(api) {
@@ -15,8 +21,3 @@ Package.on_test(function(api) {
     api.addFiles('ashutosh:email-att-tests.js');
 });
 
-Npm.depends({
-    "simplesmtp": "0.3.10",
-    "stream-buffers": "0.2.5",
-    "mailcomposer": "0.1.15"
-});
