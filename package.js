@@ -1,6 +1,6 @@
 Package.describe({
     summary: "Send e-mails with attachments.",
-    version: "1.0.5",
+    version: "1.0.6",
     git: "www.github.com/priyadarshy/email-att"
 });
 
