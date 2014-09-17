@@ -4,12 +4,12 @@ Package.describe({
     git: "www.github.com/priyadarshy/email-att"
 });
 
-Package.onUse(function(api) {
+Package.on_use(function(api) {
     api.versionsFrom('METEOR@0.9.2.1');
     api.addFiles('ashutosh:email-att.js');
 });
 
-Package.onTest(function(api) {
+Package.on_test(function(api) {
     api.use('tinytest');
     api.use('ashutosh:email-att');
     api.addFiles('ashutosh:email-att-tests.js');
