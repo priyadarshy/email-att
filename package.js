@@ -1,6 +1,6 @@
 Package.describe({
     summary: "Send e-mails with attachments.",
-    version: "1.0.9",
+    version: "1.0.10",
     git: "www.github.com/priyadarshy/email-att"
 });
 
@@ -12,12 +12,12 @@ Npm.depends({
 
 Package.on_use(function(api) {
     api.versionsFrom('METEOR@0.9.2.1');
-    api.addFiles('ashutosh:email-att.js');
+    api.addFiles('ashutosh:email-att.js', ['server']);
 });
 
 Package.on_test(function(api) {
     api.use('tinytest');
     api.use('ashutosh:email-att');
-    api.addFiles('ashutosh:email-att-tests.js');
+    api.addFiles('ashutosh:email-att-tests.js', ['server']);
 });
 
