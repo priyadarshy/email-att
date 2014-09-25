@@ -1,6 +1,6 @@
 var Future = Npm.require('fibers/future');
 var urlModule = Npm.require('url');
-var MailComposer = Npm.require('mailcomposer').MailComposer;
+var MailComposer = Meteor.npmRequire('mailcomposer').MailComposer;
 
 EmailAtt = {};
 EmailAttTest = {};
@@ -19,7 +19,7 @@ var makePool = function (mailUrlString) {
             pass: parts[1] && decodeURIComponent(parts[1])};
   }
 
-  var simplesmtp = Npm.require('simplesmtp');
+  var simplesmtp = Meteor.npmRequire('simplesmtp');
   var pool = simplesmtp.createClientPool(
     port,  // Defaults to 25
     mailUrl.hostname,  // Defaults to "localhost"
