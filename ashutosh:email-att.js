@@ -124,6 +124,8 @@ EmailAttTest.hookSend = function (f) {
  * @param options.headers {Object} custom RFC5322 headers (dictionary)
  */
 
+var sendCallback = function() { console.log(er, res); };
+
 // New API doc comment below
 /**
  * @summary Send an email. Throws an `Error` on failure to contact mail server
@@ -138,7 +140,7 @@ EmailAttTest.hookSend = function (f) {
  * @param {String} [options.text|html] Mail body (in plain text or HTML)
  * @param {Object} [options.headers] Dictionary of custom headers
  */
-EmailAtt.send = function (options) {
+EmailAtt.send = function (options, sendCallback) {
   for (var i = 0; i < sendHooks.length; i++)
     if (! sendHooks[i](options))
       return;
@@ -170,7 +172,9 @@ EmailAtt.send = function (options) {
 
   var pool = getPool();
   if (pool) {
-    smtpSend(pool, mc);
+    smtpSend(pool, mc, function(er, res) {
+      sendCallback(er, res);
+    });
   } else {
     devModeSend(mc);
   }
