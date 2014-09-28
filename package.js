@@ -1,7 +1,8 @@
 Package.describe({
     summary: "Send e-mails with attachments.",
-    version: "1.0.16",
-    git: "www.github.com/priyadarshy/email-att"
+    version: "1.0.17",
+    git: "www.github.com/priyadarshy/email-att",
+    name: "ashutosh:email-att"
 });
 
 Npm.depends({
