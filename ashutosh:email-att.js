@@ -172,12 +172,11 @@ EmailAtt.send = function (options, sendCallback) {
 
   var pool = getPool();
   if (pool) {
-    smtpSend(pool, mc, function(er, res) {
-      sendCallback(er, res);
-    });
+    smtpSend(pool, mc);
   } else {
     devModeSend(mc);
   }
+  sendCallback();
 };
 
 
