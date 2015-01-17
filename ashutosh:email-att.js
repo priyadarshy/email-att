@@ -170,6 +170,11 @@ EmailAtt.send = function (options, sendCallback) {
       mc.addAttachment(attachmentOptions);
   });
 
+  // Allow for alternatives to be added to the message.
+  _.each(options.alternativesOptions, function(alternativeOption) {
+        mc.addAlternative(alternativeOption);
+  });
+
   var pool = getPool();
   if (pool) {
     smtpSend(pool, mc, function(er, res) {
