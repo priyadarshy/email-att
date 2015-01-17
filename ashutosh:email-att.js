@@ -87,8 +87,9 @@ var devModeSend = function (mc) {
   future.wait();
 };
 
-var smtpSend = function (pool, mc) {
-  pool._future_wrapped_sendMail(mc).wait();
+var smtpSend = function (pool, mc, callback) {
+  // pool._future_wrapped_sendMail(mc).wait();
+  pool.sendMail(mc, callback);
 };
 
 /**
@@ -177,9 +178,7 @@ EmailAtt.send = function (options, sendCallback) {
 
   var pool = getPool();
   if (pool) {
-    smtpSend(pool, mc, function(er, res) {
-      sendCallback(er, res);
-    });
+    smtpSend(pool, mc, sendCallback);
   } else {
     devModeSend(mc);
   }
