@@ -1,13 +1,13 @@
 Package.describe({
     summary: "Send e-mails with attachments.",
-    version: "1.1.2",
+    version: "1.1.3",
     git: "www.github.com/priyadarshy/email-att"
 });
 
 Npm.depends({
     "simplesmtp": "0.3.10",
     "stream-buffers": "0.2.5",
-    "mailcomposer": "0.1.15"
+    "mailcomposer": "0.2.12"
 });
 
 Package.on_use(function(api) {

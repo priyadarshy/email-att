@@ -173,7 +173,7 @@ EmailAtt.send = function (options, sendCallback) {
 
   // Allow for alternatives to be added to the message.
   _.each(options.alternativeOptions, function(alternativeOption) {
-        mc.addAlternative(alternativeOption);
+    mc.addAlternative(alternativeOption);
   });
 
   var pool = getPool();
