@@ -1,6 +1,6 @@
 Package.describe({
     summary: "Send e-mails with attachments.",
-    version: "1.1.3",
+    version: "1.1.4",
     git: "www.github.com/priyadarshy/email-att"
 });
 
@@ -21,4 +21,3 @@ Package.on_test(function(api) {
     api.use('ashutosh:email-att');
     api.addFiles('ashutosh:email-att-tests.js', ['server']);
 });
-

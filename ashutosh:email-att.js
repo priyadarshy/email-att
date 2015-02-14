@@ -146,7 +146,7 @@ EmailAtt.send = function (options, sendCallback) {
     if (! sendHooks[i](options))
       return;
 
-  var mc = new MailComposer();
+  var mc = new MailComposer({escapeSMTP: true});
 
   // setup message data
   // XXX support attachments (once we have a client/server-compatible binary
@@ -183,5 +183,3 @@ EmailAtt.send = function (options, sendCallback) {
     devModeSend(mc);
   }
 };
-
-
